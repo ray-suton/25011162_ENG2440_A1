@@ -1,0 +1,1604 @@
+AI ASSISTANCE LOG: 2026-09-14 TO 2026-09-26
+ENG2440 Assignment 1
+
+This is a factual working record of assistance received in the current Codex
+conversation. It must be extended if further assistance is used. The student remains responsible for the submitted work and its claims.
+
+TOOL AND PURPOSE
+
+AI tool: OpenAI Codex, an AI coding assistant.
+Second AI tool (from 2026-09-24): Claude Code (Anthropic), an AI coding assistant
+used in the terminal for read-only project orientation. Its sessions are recorded
+as continuations below and name Claude Code explicitly.
+Codex workflows used: repo-workload-inspector and kaggle-ml-engineer. These are
+instructions used within Codex, not additional independent AI tools. The initial
+activities used no delegated agent; later diagnostic delegation is recorded in
+the continuations below.
+
+Purpose: workspace documentation and Python/Jupyter setup; explanation of the
+assignment requirements; inspection of supporting tables; identification,
+download, extraction, and verification of the specified image archive; environment
+checks; and preparation of this AI-use record. Codex generated and executed shell
+and Python commands for these activities. Its tools included local terminal/file
+access and web access to the official RSNA dataset page. Local utilities included
+Python, pdftotext, curl, Git checks in temporary directories, and Jupyter.
+
+ACTIVITY HISTORY AND EXACT PARTS AFFECTED
+
+Paths below are relative to ENG2440_Assignment1 unless prefixed with ../.
+
+2026-09-14 — workspace setup and scope correction
+- Codex created or edited ../README.md, ../PROJECT_DESCRIPTION.md,
+  ../PROGRESS.md, ../feature-list.json, ../init.sh, ../.gitignore, and
+  ../docs/environment-baseline.txt. It created a local ../.venv using existing
+  Anaconda packages and registered the Python (med_imaging) Jupyter kernel.
+- It extracted assignment1_labels.csv and rsna_to_nih_mapping.csv unchanged
+  from the supplied supporting ZIP. They were initially in the workspace root
+  and were later present in this assignment folder. Codex adapted to the changed
+  folder layout; it did not perform that relocation.
+- Codex initially generated ../notebooks/01_setup.ipynb,
+  ../scripts/check_setup.py, ../src/med_imaging/__init__.py, ../pyproject.toml,
+  and an earlier ../ai_use_declaration.txt draft. The starter contained setup
+  configuration/checks, not a trained model. Codex executed setup checks and
+  temporary verification tests for this scaffold.
+- After the student objected to the expanded scope, Codex removed those generated
+  files and uninstalled the editable med-imaging project package. The environment
+  and documentation were retained. The removed scaffold is disclosed here even
+  though it is not part of the current submission files.
+
+2026-09-15 — assignment and supporting-file inspection
+- Codex read the assignment PDF and summarized its required work, submission
+  requirements, source-patient grouping rule, and section 9 download instructions.
+- AI-generated local Python commands inspected both CSVs and produced data-summary
+  outputs: 28,989 annotation rows; 25,684 unique examinations; 11,171 source
+  patients; 5,659 positive examinations (22.03%); and 20,025 negative examinations.
+  Additional outputs covered repeated examinations, patients with multiple
+  examinations, missing values, duplicate/conflicting records, bounding-box
+  fields, and label/mapping join coverage.
+- These counts and checks were AI-assisted analysis, not solely administrative
+  environment setup. They appeared in the conversation and local inspection
+  records. Codex did not insert them into the student's notebook or final report.
+  Any later use of them in task A or elsewhere must remain disclosed and be
+  independently checked and understood by the student.
+- Codex verified the official RSNA download link. It did not download the image
+  archive on this date.
+
+2026-09-20 — dataset download, extraction, and environment audit
+- Codex downloaded the archive specified in section 9 into
+  data/downloads/pneumonia-challenge-dataset-original_2018.zip and extracted
+  25,684 DICOM files into data/images/, preserving the nested study/series paths.
+- AI-generated commands checked ZIP CRC integrity, the DICOM file markers, archive
+  size/SHA-256, unchanged supporting CSV contents, and exact filename
+  SOPInstanceUID coverage against the label table. No missing or extra image
+  instances were found. One sample header's transfer-syntax identifier was checked.
+- These were integrity/coverage checks. Image pixels were not decoded, transformed,
+  displayed, or used for model training or evaluation.
+- Codex checked scientific-library imports, package dependency consistency, a CPU
+  tensor operation, the registered Jupyter kernel, and CUDA device detection.
+  Jupyter verification used a temporary in-memory notebook, not the student's file.
+- The audit found pydicom absent, the student's notebook an empty placeholder,
+  and no GPU reservation listed in the current Slurm allocation. CUDA detection
+  worked outside the restricted sandbox. No new third-party packages were installed.
+- Codex updated ../.gitignore, ../README.md, ../PROJECT_DESCRIPTION.md,
+  ../PROGRESS.md, and ../feature-list.json for the current layout and setup status.
+- Codex did not initialize or edit 25011162_ENG2440_A1.ipynb. No patient split,
+  classification pipeline, trained model, model-performance metrics, Grad-CAM
+  output, or completed assignment report was produced by Codex in this conversation.
+
+2026-09-20 — disclosure record
+- At the student's request, Codex drafted this file, ai use declaration.txt,
+  after re-reading section 7 on pages 4–5 of the assignment PDF.
+- Codex also recorded the section 7 boundaries in ../PROJECT_DESCRIPTION.md.
+- Codex wrote local session records under ../.omx/reports/. These are workspace
+  audit records, not a substitute for the student's executed notebook or report.
+
+DATA HANDLING DISCLOSURE
+
+CSV inspection, archive extraction, and DICOM marker/header checks ran through
+local commands. The AI conversation received tool outputs including column names,
+aggregate dataset statistics, paths, some public DICOM filename/UID paths, a
+transfer-syntax identifier, and integrity results. The assistant did not print or
+attach complete CSV/DICOM files or render medical images in the conversation.
+The archive was downloaded from RSNA to local storage. This describes the visible
+actions; it does not certify the AI platform's underlying data handling. Future
+assistance must respect section 7's restriction on sharing medical images, dataset
+files, credentials, or potentially identifying information with external AI services.
+
+USER TASK PROMPTS
+
+The following task prompts and short corrections are transcribed from the visible
+conversation, retaining their wording. This is a prompt extract and activity
+summary, not a complete raw transcript. The workspace instructions and supplied
+skill definition were additional context. No share/export link was generated.
+
+2026-09-14:
+1. "set up this place for me will be a medical imaging proejct"
+2. "unzip as well"
+3. "bro."
+4. "don't do these for me."
+5. "reverse. i just wnat you to set up the documentation and environment and such"
+6. "Medical imaging ML research" — response to the project-focus question.
+7. "acctually not. like a simple ml proejct"
+
+2026-09-15:
+8. "ok so let's start working together $kaggle-ml-engineer"
+   The kaggle-ml-engineer skill instructions were also supplied as context.
+9. "check the assignment.pdf and supporting files/"
+10. "check section 9 of assignment1.pdf"
+11. "done?"
+
+2026-09-20:
+12. "then let's download extract them and such"
+13. "check if we're good with the background and envs and such set up"
+14. "add this log to ai use declaration.txt. adhere to ai use rules in the assignment pdf"
+
+SUPPORTING RECORDS
+
+Local records, relative to this declaration:
+- ../.omx/reports/task-2026-09-14-132024.md — initial setup/scaffold.
+- ../.omx/reports/task-2026-09-14-132229.md — removal of extra scaffolding.
+- ../.omx/reports/task-2026-09-14-132455.md — simple ML project clarification.
+- ../.omx/reports/task-2026-09-15-104740.md — assignment and CSV inspection.
+- ../.omx/reports/task-2026-09-15-113245.md — section 9 download-source check.
+- ../.omx/reports/task-2026-09-20-170423.md — download and environment audit.
+- ../.omx/reports/dataset-download-verification-2026-09-20.json — integrity record.
+
+These local records are not necessarily included in the submission or private
+repository. The disclosure fields and task prompts are included directly above.
+
+SECTION 7 BOUNDARIES FOR FURTHER ASSISTANCE
+
+The assignment permits disclosed concept explanations, debugging a specific error
+after the student's own attempt, feedback on grammar/clarity or a small self-written
+code fragment, and short examples that the student independently adapts, tests,
+and can explain. It prohibits generating or substantially rewriting the full
+solution, notebook, or report; fabricating outputs/references; submitting work the
+student cannot explain and reproduce; prohibited data sharing; AI use during the
+oral defence; and hiding or misrepresenting assistance.
+
+This record reports what happened; it is not a blanket certification that every
+past action is permitted by the course rules. No claim is made that the student
+has already independently reproduced the AI-assisted dataset summaries. Future
+assistance and any incorporation of these outputs must follow the assignment rules.
+
+
+
+CONTINUATION — 2026-09-20 22:06 +04:00: workspace workload inspection
+
+AI tool: OpenAI Codex, using the repo-workload-inspector skill and one read-only
+Codex explorer subagent for notebook status. The subagent was a helper within
+Codex, not a separate external AI product.
+User prompt: "$repo-workload-inspector". The skill definition and workspace
+operating instructions were also supplied as context.
+Purpose: identify the active workload, distinguish current evidence from older
+status notes, and record the most justified next step.
+
+Actions: ran the skill snapshot; read workspace documentation, the assignment
+PDF as local text, disclosure history, and selected audit records. Checked Git
+state, installed package metadata, kernel configuration presence, input archive
+size/member count, and CSV SHA-256 equality with the supporting ZIP. Inspected
+notebook source and execution/output metadata without executing cells or
+displaying their outputs. Notebook schema and Python syntax validation passed.
+The preview cell now has execution count 6 and a saved PNG representation, with
+no saved errors. This supersedes the earlier pending-rerun status but does not
+prove visual correctness or current end-to-end reproducibility. No image was
+viewed, decoded, or interpreted during this inspection.
+
+Data handling: the prescribed snapshot helper automatically emitted short CSV
+previews containing dataset identifiers into the AI tool output. Subsequent
+checks returned only aggregate or pass/fail results; notebook output values and
+encoded image contents were not printed. No network request was made.
+
+Affected files: ../PROJECT_DESCRIPTION.md, ../PROGRESS.md, this declaration,
+and ../.omx/reports/task-2026-09-20-220610.md. No notebook, dataset, dependency,
+bootstrap script, model, or assignment-report content was changed. No split,
+training, performance result, or new dataset-wide analysis was generated.
+The proposed next step is user-authored examination-level EDA joined to the
+source-patient mapping; assignment implementation remains user-owned.
+
+
+CONTINUATION — 2026-09-20 22:12 +04:00: baseline and marker EDA discussion
+
+AI tool: OpenAI Codex, using the research-dialogue-partner skill.
+User prompt: "let's do some eda. for the baseline we have to hand design some
+features right or should we just use a simple mlp? also what i observed is that
+on the right upper corner there's always a market. shall we get rid of that?
+or at least we should check if that is universal."
+Purpose: explain baseline feature/model choices and how to investigate a possible
+non-anatomical image marker before changing preprocessing.
+
+Codex reread the local assignment's baseline, EDA, preprocessing, shortcut-test,
+and assistance requirements. It explained that engineered features and MLPs
+are separate choices, proposed a simple image-summary linear baseline, and
+outlined a small training-data audit of marker presence, appearance, location,
+and associations with label/view. Marker identity was requested as a text
+clarification. The user's observation was not treated as a verified dataset
+property. No marker removal or dataset-wide prevalence claim was made.
+
+Codex consulted the primary study by Zech et al. (2018), "Variable generalization
+performance of a deep learning model to detect pneumonia in chest radiographs:
+A cross-sectional study", DOI 10.1371/journal.pmed.1002683. Public web searches
+contained generic research terms only; no local records, medical images,
+identifiers, or credentials were sent in these requests. The study supplies
+general shortcut-learning context, not findings about the user's observed mark.
+
+Affected files: ../PROJECT_DESCRIPTION.md, ../PROGRESS.md, this declaration,
+and ../.omx/reports/task-2026-09-20-221245.md. No notebook code, dataset,
+preprocessing, environment, or assignment report was modified. No images were
+viewed, pixels decoded, marker detector run, model fitted, or new dataset
+statistics generated. No delegated agent was used in this discussion.
+
+
+CONTINUATION — 2026-09-20 22:18 +04:00: class balance and discussion-only correction
+
+AI tool: OpenAI Codex, continuing research-dialogue-partner.
+User prompt: "for the upper right marker we have to check and dig into it. for
+now what i'm thinking is let's split first. patience level splitting. after that
+we try out eda, we can also try out different features and such. before that.
+let's do one thing. i do believe the most important thing is to check the class
+distirbution now. let's do that"
+Follow-up correction: "i'll do it dw u just need to discus with me and think no
+code"
+
+Before receiving the correction, Codex ran a read-only local pandas check of
+the two CSVs. It aggregated Target=max per examination patientId and checked a
+one-to-one join to the source-patient mapping, reading identifiers as strings.
+The returned aggregates were 28,989 annotation rows, 25,684 examinations,
+20,025 negative examinations (77.97%), 5,659 positive examinations (22.03%),
+and 11,171 source patients. It also checked target validity, missingness,
+within-examination label consistency, mapping coverage, raw annotation counts,
+and the number of source patients with both examination classes. These are
+AI-generated checks, not independently student-generated or verified EDA.
+Only aggregates were printed; no individual records, IDs, or images were
+returned. No network request or delegated agent was used.
+
+After the correction, Codex stopped dataset execution and acknowledged the
+discussion-only preference. Subsequent assistance in the turn was conceptual
+guidance about the unit of analysis and counting each examination once.
+No code was added to the student's notebook and no split, feature extraction,
+image/marker inspection, or model training was performed.
+
+Affected files: ../PROJECT_DESCRIPTION.md (scope and discussion status),
+../PROGRESS.md, this declaration, and
+../.omx/reports/task-2026-09-20-221800.md. A temporary local aggregate record
+was written to /tmp/med_imaging_class_distribution_check.json before the
+correction. The two CSVs and notebook were read but not edited. Further code
+writing or execution is left to the student unless explicitly requested.
+
+
+CONTINUATION — 2026-09-20 22:25 +04:00: interpreting class counts and imbalance
+
+AI tool: OpenAI Codex, conceptual discussion only.
+User prompt: "ok so we got 8964 and 20025. 8964 positives and 20025 negatives.
+in this case. i mean we can shrink the negative ig? to a 50 50? or we can do
+data augmentation the positives. in addition, we now expect the baseline to
+be better than 70% if we don't apply anychanges."
+
+Codex identified these as annotation-row counts using the existing 22:18 local
+check, without rerunning data analysis. It explained repeated positive-box
+rows versus unique examinations and cited the earlier examination counts:
+5,659 positives and 20,025 negatives, corresponding to about 22.03% and 77.97%.
+It explained that always predicting negative would give about 77.97% accuracy
+on the full collection but zero positive recall, and that the eventual test
+baseline must be measured on the fixed split using the training-majority class.
+
+Discussion covered the tradeoffs of negative undersampling, positive
+augmentation, weighted loss, and balanced sampling; imbalance interventions
+belong in training while validation/test prevalence is preserved. Augmented
+views are correlated variants, not independent new patients, and augmentation
+does not by itself change the class sampling frequency. No intervention was
+selected or implemented, and no new results were generated.
+
+Affected files: this declaration and
+../.omx/reports/task-2026-09-20-222504.md. No notebook/data reading or code
+execution occurred for this discussion; tools only obtained the time and wrote
+these documentation entries. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-20 22:35 +04:00: patient-grouped split design
+
+AI tool: OpenAI Codex, conceptual discussion only.
+User prompt: "ok got it. dropped duplicates ic. now we can start train val test
+split. let's do patient level splitting. right?  so what we can do is actually
+just llok at nih_patient_id and random split? we have 25684. we can take 3500
+val 2184 test? and 20000 training?"
+
+Codex explained assigning unique nih_patient_id groups to splits and carrying
+all examinations for a source patient into the same split. It distinguished
+examination deduplication from deleting repeated source-patient identifiers.
+The proposed counts sum to 25,684 and correspond to about 77.9% training,
+13.6% validation, and 8.5% test. These are approximate examination-count targets
+under patient grouping because patients contribute different numbers of exams.
+
+Discussion covered fixing the random seed, verifying disjoint source-patient
+sets and complete examination assignment, reporting split class proportions,
+and optionally balancing examination classes subject to indivisible patient
+groups. A patient can have examinations from both classes. The future test
+assignment should be frozen before feature/model selection. No split was
+created, no notebook or CSV was inspected, and the user's deduplication was
+not independently verified.
+
+Affected files: this declaration and
+../.omx/reports/task-2026-09-20-223534.md. Tools only obtained the time and
+updated documentation. No code execution, data modification, web request,
+delegation, or experiment occurred.
+
+
+CONTINUATION — 2026-09-20 23:07 +04:00: DICOM identifiers and feature columns
+
+AI tool: OpenAI Codex, conceptual discussion only.
+User prompt: "what does seriresinstance studyinstanceand sopinstance do? now i
+have merged. thse three are looking really messy. lowk i wanna drop those three
++ patient id."
+
+Codex consulted official DICOM PS3.3 study, series, and SOP Common module
+definitions to explain StudyInstanceUID, SeriesInstanceUID, and SOPInstanceUID.
+It distinguished these identifiers and the assignment examination patientId
+from the source-patient grouping column nih_patient_id. The user's newly merged
+table was not inspected or independently verified.
+
+Using the previously recorded image-path fix, Codex explained that the study,
+series, and SOP identifiers currently locate local DICOM files. It recommended
+retaining original identifiers in the master metadata, keeping nih_patient_id
+for split grouping, and excluding identifiers from model predictors. A smaller
+working view or feature table can omit them once image paths and traceability
+are preserved. No columns were actually removed and no code was supplied.
+
+Affected files: this declaration and
+../.omx/reports/task-2026-09-20-230716.md. Tools consulted public standards using
+generic terms, obtained the time, and maintained documentation. No local data,
+images, identifiers, or credentials were sent in web requests. No analysis code,
+notebook execution, dataset inspection/modification, or delegation occurred.
+
+
+CONTINUATION — 2026-09-21 11:51 +04:00: reported split and first training EDA
+
+AI tool: OpenAI Codex, conceptual discussion only.
+User prompt: "ok now let's start doing eda. i have split. now we don't touch the
+test until we finalize our featur engineering n stuff. we do havet o check the
+distribution of test first. test and train distribution differ by 0.02."
+
+Codex treated the completed split and distribution gap as user-reported,
+without inspecting the notebook or data. It requested clarification of whether
+0.02 refers to class fractions (two percentage points) or percentage values
+(0.02 percentage points). It explained a one-time split audit, approximate
+class balance under patient grouping, and reserving test evaluation until the
+full preprocessing/model/threshold choices are finalized using development data.
+It did not certify the split or recommend changing test prevalence.
+
+The proposed EDA discussion focuses on training images from distinct patients,
+covering both classes and available views, including marker presence,
+appearance, and location. No image contents were viewed, no prevalence or
+marker associations were measured, and no feature or removal policy was chosen.
+
+Affected files: ../PROJECT_DESCRIPTION.md, ../PROGRESS.md, this declaration,
+and ../.omx/reports/task-2026-09-21-115127.md. Tools only obtained the time and
+maintained documentation. No assignment code was supplied/executed, notebook
+or dataset inspected/modified, web request made, or subagent used.
+
+Follow-up clarification: "Two percentage points (22% vs 24%)".
+Codex recorded the clarified units, without assuming the example percentages
+are the exact observed values. It explained that the gap alone is not grounds
+to reject the split; patient disjointness and split sizes still matter. Updated
+the same overview, progress, disclosure, and session report. No code or data
+operations were performed.
+
+
+CONTINUATION — 2026-09-21 11:55 +04:00: checking subsets under grouped CV
+
+AI tool: OpenAI Codex, conceptual discussion only.
+User prompt: "i'm only have test and train. because we be using built in cross
+val on train. how can we check the subsets according to those what you meant"
+
+Codex acknowledged that its previous reference to three permanent subsets
+belonged to the superseded fixed-validation plan. The current design has an
+outer train/test split and validation folds inside the training pool. It
+explained inspecting the splitter's row assignments before model training,
+summarizing examinations, unique source patients, and positive-class proportions
+for the outer split and for each fold, and checking patient separation at
+the appropriate level. The fold row positions refer to the supplied training
+pool. Training subsets can overlap across folds; each patient enters validation
+once per complete five-fold partition. Test patients never enter the CV pool.
+
+Codex reiterated using a patient-group-aware splitter such as
+StratifiedGroupKFold, with nih_patient_id as the grouping identifier and Target
+as the class label. These are conceptual checks, not executed validation.
+
+Affected files: ../PROJECT_DESCRIPTION.md, ../PROGRESS.md, this declaration,
+and ../.omx/reports/task-2026-09-21-115500.md. Tools obtained the time and
+maintained documentation only. No code was supplied or run, notebook/data
+read or modified, split generated, model trained, web request made, or subagent
+used. The current split and CV implementation remain independently unverified.
+
+
+CONTINUATION — 2026-09-21 12:25 +04:00: visual consistency before feature design
+
+AI tool: OpenAI Codex, conceptual discussion only.
+User prompt: "i meant we should be checking the consistency of upper right
+marker. the text, shape, like overlap and such. like is the data standard and
+the final check before we can start feature enginering"
+
+Codex acknowledged misinterpreting the previous question as a split audit.
+It outlined a training-image consistency audit: determine whether the mark is
+embedded in pixels or part of the display; inspect presence/content, shape,
+relative position/size, and anatomical overlap; and compare observations across
+classes and available views using distinct patients. It also discussed image
+dimensions, grayscale polarity, intensity representation, and orientation/view
+as relevant to comparable image-summary features.
+
+Guidance distinguished consistency of representation from legitimate image
+variation. Marker variation alone is not proof of a shortcut or grounds for
+automatic cropping, and a small sample cannot establish universality. Marker
+and border effects on summary features depend on their area and intensities.
+No medical images were viewed, no dataset properties or associations established,
+and no preprocessing or feature policy was implemented or selected.
+
+Affected files: ../PROJECT_DESCRIPTION.md, ../PROGRESS.md, this declaration,
+and ../.omx/reports/task-2026-09-21-122502.md. Tools obtained the time and
+maintained documentation only. No assignment code was supplied or executed;
+no notebook/data was inspected or modified. No web request or subagent was used.
+
+CONTINUATION — 2026-09-21 23:21 +04:00: transition to baseline feature EDA
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompts: "so what's your suggestion now? what we should do?" and
+"let's try to wrap up the checking part ans tart eda and feature engineering
+for baseline".
+
+Codex proposed keeping decoded pixels unchanged during the current audit,
+inspecting relevant DICOM metadata before choosing a transform, and treating
+fixed scaling as conditional on verified representation. It then proposed
+combining remaining loading/representation checks with a training-only feature
+pass: one examination row, image mean/std/10th/90th percentile, identifiers kept
+as metadata, and labels separate from predictor inputs. It discussed feature
+distributions by class/view, correlations, and review of unusual images.
+
+The first full-frame baseline was proposed without unverified marker removal.
+The marker hypothesis remains open for later validation-based comparison.
+Feature standardization must be fitted inside CV training folds. No full-dataset
+readability result, bit-depth consistency, normalization choice, marker finding,
+feature table, or model result was established by Codex in this discussion.
+
+Affected files: ../PROJECT_DESCRIPTION.md, ../PROGRESS.md, this declaration,
+and ../.omx/reports/task-2026-09-21-232112.md. No code, notebook, image, or dataset
+was read, generated, executed, or modified in this turn. Only documentation
+maintenance occurred; no web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-22 19:55 +04:00: EDA kickoff and current-table clarification
+
+AI tool: OpenAI Codex, continuing guided instruction.
+User prompt: "let's start our eda now."
+
+Codex inspected the saved notebook's cell/source metadata, looking for
+feature_table, train_exams, mean_intensity, or std_intensity. There were 15 cells
+and no matching code cells. This establishes only saved-file state; the live
+session was not inspected. No notebook source, output tables, image bytes,
+individual records, or identifiers were printed into tool output in this check.
+
+Codex asked whether the preparation cell has created feature_table in the live
+session or whether the user is working from train/merged. It proposed beginning
+feature EDA with mean-intensity distributions by Target, using common bins and
+class-normalized density to avoid conflating class size with distribution shape.
+No actual distribution, marker pattern, feature quality, or model result was
+computed or inferred from unavailable outputs.
+
+Affected files: ../PROJECT_DESCRIPTION.md, ../PROGRESS.md, this declaration
+(including its date header), and ../.omx/reports/task-2026-09-22-195540.md.
+No dataset or medical image was accessed, no notebook cell executed or edited,
+and no live kernel queried. No web request or delegated agent was used.
+
+Follow-up clarification: "No, I currently have train/merged".
+Codex adapted the next step to visual EDA using train, proposing four positive
+and four negative examinations from distinct source patients, displayed locally
+as whole images with upper-right enlargements. Suggested recording marker
+presence, appearance, and anatomical overlap. A class-balanced display sample
+does not change the training distribution or estimate overall prevalence.
+The same overview, progress, disclosure, and session report were updated.
+No code, dataset access, image viewing, or feature extraction occurred.
+
+
+CONTINUATION — 2026-09-23 23:16 +04:00: workspace resumption brief
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompt: "$repo-workload-inspector" (no target path; the workspace root was
+inspected).
+
+Codex ran the repo-workload-inspector snapshot helper and read the workspace
+truth documents, notebook cell/output metadata, dataset folder shape, and the
+project virtual environment. It recorded that the saved notebook still has 15
+cells with execution counts through 13 and three empty trailing cells, that no
+feature table, EDA figure, split audit, or model result exists in saved state,
+and that `docs/environment-baseline.txt` is a stale setup snapshot (it omits
+`pydicom`, which resolves to 3.0.2 in the current venv). No dataset row, image
+pixel, or identifier was printed into tool output beyond CSV headers and first
+rows already recorded in this log.
+
+Affected files: ../PROGRESS.md, this declaration (including its date header),
+and ../.omx/reports/task-2026-09-23-231642.md. No notebook cell, dataset image,
+or kernel was executed or edited; no model, split, feature, or marker finding
+was established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-23 23:35 +04:00: guided EDA step 1
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompt: "what's the next step? let;s tart the eda right".
+
+Codex answered with an ordered next step and no implementation: first confirm the
+unit of analysis in the user's own kernel (rows versus unique examinations, the
+rows-per-examination distribution, duplicates versus genuinely separate bounding
+boxes, and one `Target` per `patientId`), then build the agreed balanced
+training-image panel, then record marker observations. It also pointed out that
+the saved notebook's whole-row `drop_duplicates(..., inplace=False)` call is
+never assigned, so `train` still holds annotation rows, and it advised fixed
+grayscale scaling with a common polarity across the panel images so appearance
+comparisons are meaningful.
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-23-233500.md,
+plus this entry. No dataset row, image, or identifier was accessed by the tool,
+no notebook cell was executed or edited, and no marker, split, or feature finding
+was established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-23 23:52 +04:00: multi-row examinations and plain-language steps
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompt: "ok let's walk over there. there are 3062 2 rows. 105 3 rows and 11
+4 rows. we will inspect them together in additoin,.then explain in simpel words
+what did your step 2 and 3 meant".
+
+The user's own count is recorded here as the user's result, not as an
+assistant-computed one: 3,062 examinations with two rows, 105 with three, and 11
+with four — 3,178 examinations carrying more than one annotation row. The 1-row
+bucket, total unique `patientId`, and `Target`-per-examination check are still
+outstanding, and Codex stated that it claims no proportion and no collapse
+decision until they arrive.
+
+Codex suggested inspecting those multi-row examinations jointly to separate
+three cases: separate images inside one examination (different `SOPInstanceUID`),
+one image with several bounding boxes (same `SOPInstanceUID`, different
+coordinates), and exact duplicate rows. It then restated steps 2 and 3 in plain
+language — a four-positive/four-negative contact sheet drawn from distinct source
+patients on one shared brightness scale, followed by a one-line-per-image written
+record — and explained that a corner mark tied to one class is a shortcut a model
+could learn instead of pneumonia.
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-23-235200.md,
+plus this entry. No dataset row, image, or identifier was accessed by the tool;
+no notebook cell was executed or edited; no marker, split, or feature finding was
+established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-24 00:15 +04:00: multi-row examinations read as multiple boxes
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompt (results of the student's own checks): "both is 0. and 22506 rows do
+have 1. and the counts match".
+
+The student's numbers are recorded as their own results: no whole-row duplicates,
+22,506 examinations with a single row, and 3,062 / 105 / 11 examinations with
+two / three / four rows. Codex noted the resulting arithmetic (25,684
+examinations, 3,305 extra rows, 28,989 rows implied, 12.4% of examinations with
+extra rows) and observed that 25,684 also equals the verified DICOM file count
+and the count of distinct labelled SOP instance identifiers. It therefore
+suggested the extra rows are additional bounding boxes on a single image rather
+than extra images, and offered a check that would falsify this: a per-row `Target`
+mean should come out slightly higher than the examination-level mean if the extra
+rows sit only on positive images.
+
+Codex also listed what remains unconfirmed: the explicit `patientId` and row
+totals, the one-`Target`-per-examination check that gates collapsing, and the
+distinct-`SOPInstanceUID` check on one four-row examination.
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-24-001500.md,
+plus this entry. No dataset row, image, or identifier was accessed by the tool;
+no notebook cell was executed or edited; no marker, split, or feature finding was
+established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-24 00:30 +04:00: dropping box rows and box columns
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompt: " the other two conerns is
+confirmed ... and then if one examination is one image. we kinda can drop right?
+since we are doing like classification task ... also another problem is that
+before feeding into trainig exapmles we have to take out the bounding boxes no?
+since those boxes also contain information."
+
+Codex explained that an empty Series means the filtered frame was empty, so the
+distinct-image check never evaluated, and supplied the direct replacement
+(`merged['SOPInstanceUID'].nunique()` against `merged['patientId'].nunique()`).
+It advised dropping the extra annotation rows for a classification task, since
+the image is the sample unit, and proposed a self-validating collapse: drop the
+box columns, then `drop_duplicates()`, then confirm the row count matches
+`train['patientId'].nunique()`. It advised moving the box columns into a separate
+annotation table rather than deleting them, and warned that box-column nullity is
+a perfect label leak because boxes exist only on positive images.
+
+On the question of removing boxes from the images, Codex separated two meanings:
+ground-truth coordinates stored in a CSV cannot reach the model unless they are
+used as features, whereas marks physically burned into the pixel data can leak
+through the image itself. It noted that whether any rectangles are burned in is
+precisely what the planned visual audit checks, and that cropping to boxes is
+unusable at test time because boxes are unknown then.
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-24-003000.md,
+plus this entry. No dataset row, image, or identifier was accessed by the tool;
+no notebook cell was executed or edited; no marker, split, or feature finding was
+established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-24 02:00 +04:00: step 2 contact-sheet recipe
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompt: "ok those risks are all prevented. now let's do step2. discovered
+that stratified group fold is the key here."
+
+The student reported that the split risks are handled and that they worked out
+`StratifiedGroupKFold` as the appropriate grouped cross-validation. Codex then
+supplied the step 2 recipe for the student to implement: select four positive and
+four negative rows from `train_img` after `drop_duplicates('nih_patient_id')`
+with a fixed seed and assert eight distinct source patients; add one deliberate
+multi-box examination from the pre-collapse `train` and display it plain and with
+its box coordinates drawn so the pixels can be checked for burned-in rectangles;
+build DICOM paths directly from study/series/SOP UIDs after confirming the
+filename convention with a single `listdir`; decode raw pixels with `MONOCHROME1`
+inverted to a common polarity and a `BitsStored`-derived display ceiling; render
+every image with identical `vmin`/`vmax` as a whole image plus a fixed top-right
+crop; and record label, source patient, view, `PhotometricInterpretation`,
+`BitsStored`, pixel spacing, mark presence, content, shape, position, anatomical
+overlap, and burned-in versus display-only status. Codex also gave the
+interpretation rule: a mark in every image carries no class signal, a mark
+confined to one class is a shortcut to test by masking, and a mark tied to view
+or source points to acquisition confounding. The student views the images locally
+and reports observations in words only.
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-24-020000.md,
+plus this entry. No dataset row, image, or identifier was accessed by the tool;
+no notebook cell was executed or edited; no marker, split, or feature finding was
+established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-24 11:45 +04:00: cell review, step 2 code, and marker handling
+
+AI tool: OpenAI Codex, guided conceptual discussion and code explanation.
+User prompts (logged retrospectively at the user's request after an interval they
+had asked to leave unlogged): "check my code and tell me what's wrong here.";
+"no tell me let's say we are doing step 2 right. what is step 2 doing and how
+should we do it. give me the real code."; "tell me what are these doing and why
+do we need it?"; and the follow-up observations about burned-in marks.
+
+Review of the student's notebook cell 17 identified the failure
+`AttributeError: 'Figure' object has no attribute 'add_patch'` (a figure has no
+axes), a missing `Rectangle` import, undefined placeholder names (`p`, `x`, `y`,
+`width`, `height`, `decoded`), the absence of any `imshow` call, and a
+`drop_duplicates('patientId')` that discarded all but one box row of a multi-box
+examination. Codex also noted the `MONOCHROME1` display/data inconsistency, that
+cell 3's "25684 patients" comment refers to examinations rather than the 11,171
+source patients, and that cells 10 and 12 still discard unassigned
+`drop_duplicates` results. Codex recommended keeping the test set untouched after
+cell 9's one-time split audit.
+
+At the student's explicit request, Codex supplied four notebook cells for step 2 —
+panel selection and decoding, a metadata and observation template, the contact
+sheet, and the burned-in-box comparison — and then explained block by block what
+each line does and why it is needed, covering the polarity convention, the
+`BitsStored` normalisation, the reproducibility seed, the distinct-source-patient
+requirement, the shared display range, and the plain-versus-overlay comparison.
+This is AI-written code that the student must review, adapt, and be able to
+explain.
+
+The student's own viewing found that the marks are not confined to the top-right
+corner but appear top-left, middle-right, middle-top-right, bottom-left, and
+elsewhere, and they suspect each source system or hospital prints its own label;
+they also reported that `Target` 0 and 1 look similar to them. Codex explained
+that labels are radiologist annotations rather than something to be read off an
+image by a non-expert, separated the mark types (laterality, technical overlay,
+view/projection), identified the metadata fields that expose acquisition source
+and burned-in status (`Manufacturer`, `ManufacturerModelName`, `StationName`,
+`InstitutionName`, `BurnedInAnnotation`, `ViewPosition`, `ImageLaterality`), and
+recommended testing whether source correlates with the label before choosing a
+remedy. The remedies described, in order of preference, were a fixed border mask
+or crop applied identically to train and test, lung-field cropping via
+segmentation, inpainting only where text can be located, and — rejected as
+non-standard — training a model to erase the marks. Codex also suggested checking
+whether any annotated box intersects the masked region. Border masking requires
+no new dependency: `scikit-image`, `Pillow`, and `scipy` are already present,
+while `cv2`, `monai`, `torchxrayvision`, and `pytesseract` are not installed.
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-24-120700.md, plus
+this entry. No dataset row, image, or identifier was accessed by the tool; no
+notebook cell was executed or edited; no marker prevalence, split, feature, or
+model result was established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-24 15:17 +04:00: the cue question and missing DICOM tags
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompts: "expand on the question the cue first. let's insepct and understand
+that together. it says there's no attribute called these"; then "some has some
+doesn't. let me check/".
+
+Codex explained that `ds.Manufacturer` and similar accesses are direct lookups on
+a sparse tag container, so an attribute that a given file does not carry raises
+`AttributeError`, and supplied the robust patterns instead: `ds.get(tag)`,
+`"Tag" in ds`, `getattr(ds, "Tag", None)`, and `ds.dir()`, together with
+`pydicom.dcmread(path, stop_before_pixels=True)` for header-only reads.
+
+Codex then expanded the cue question. A shortcut cue was defined as a pixel
+pattern that correlates with the label for reasons unrelated to pneumonia, which
+only matters when the class balance differs across the thing generating the
+pattern. The measurable quantity is therefore positive rate across a proxy for
+acquisition source, and Codex explained why this dataset could plausibly confound:
+collection across institutions, differing site case mix, and portable or supine
+films taken on sicker patients. It noted leave-one-source-out evaluation as the
+strongest available check if several sources can be identified, and that missing
+metadata does not prove the cue is absent, leaving a mask-versus-no-mask ablation
+as the fallback. The inspection plan supplied was a tag-presence survey over
+about 200 examinations, value tabulation for non-identifying device fields, then a
+positive-rate cross-tabulation by whichever proxy survives, followed by a decision
+to mask for hygiene, mask as a requirement, or fall back to structural proxies and
+state the limitation. Codex advised keeping identifying fields local and reporting
+only tag names, presence counts, and non-identifying device value distributions.
+
+A read-only header probe that would have listed tag keywords only (no values) was
+started and then aborted by the user before returning, so no header content was
+read into this conversation.
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-24-151700.md, plus
+this entry. No dataset row, image, or identifier was accessed by the tool; no
+notebook cell was executed or edited; no marker prevalence, split, feature, or
+model result was established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-24 15:22 +04:00: metadata survey result
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompt: "ok i only found that viewposition and ptient oreintation exists. and
+200/200 has bodypart examined. view position, orientation. rows, columns, pixel
+spacing. photometricinterpration, bitststored, and pixelrepresentation."
+
+The student's own 200-examination survey is recorded as their result: only
+`ViewPosition` and `PatientOrientation` survive among the source-identity fields,
+while `BodyPartExamined`, `ViewPosition`, `PatientOrientation`, `Rows`, `Columns`,
+`PixelSpacing`, `PhotometricInterpretation`, `BitsStored` and
+`PixelRepresentation` are present in all 200 files; `Manufacturer`,
+`ManufacturerModelName`, `SoftwareVersions`, `StationName`, `InstitutionName`,
+`DeviceSerialNumber`, `ImageLaterality` and `BurnedInAnnotation` are absent.
+
+Codex explained that identity fields were stripped during dataset curation, so
+institutions and scanners cannot be grouped directly, but that the surviving view,
+geometry and polarity fields are themselves protocol or machine fingerprints and
+can serve as source proxies. It then proposed three steps: a full keyword
+inventory, because the original tag list was not exhaustive and de-identification
+often retains technique fields such as `KVP`, `ExposureTime`, `XRayTubeCurrent`,
+`FilterType` and the source-distance fields; positive-rate tables by
+`ViewPosition`, image-size group and polarity, with counts per level; and a
+metadata-free pixel test of the cue — the fraction of near-saturated pixels in the
+outer border ring per image, compared by `Target` with an AUC — together with the
+decisive variant of training the same simple model on ring-only features to see
+whether the border alone predicts the label above chance. Codex also restated the
+decision rules for flat versus live associations and for unusable metadata, in
+which case the ring-only test plus a mask-versus-no-mask ablation applies and the
+limitation must be reported.
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-24-152200.md, plus
+this entry. No dataset row, image, or identifier was accessed by the tool; no
+notebook cell was executed or edited; no marker prevalence, split, feature, or
+model result was established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-24 15:24 +04:00: full tag inventory
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompt: the complete keyword list read from a header ("we have all these").
+
+Codex classified the retained fields for the cue question: protocol/view
+(`ViewPosition`, `PatientOrientation`, `SeriesDescription`, `Modality`,
+`SOPClassUID`), pipeline/processing (`ConversionType`,
+`LossyImageCompression`, `LossyImageCompressionMethod`, `SpecificCharacterSet`),
+timing/batch (`StudyDate`, `StudyTime`, `AccessionNumber`, `StudyID`,
+`SeriesNumber`, `InstanceNumber`), patient covariates (`PatientSex`,
+`PatientAge`), and geometry/encoding (`Rows`, `Columns`, `PixelSpacing`,
+`BitsAllocated`, `BitsStored`, `HighBit`, `PixelRepresentation`,
+`PhotometricInterpretation`, `SamplesPerPixel`). It identified
+`SeriesDescription` as the strongest new lead because it often carries the view
+or protocol in text, `LossyImageCompression` as important because compression
+artefacts are visible to a network and therefore a pixel-level cue, and
+`StudyDate`/`StudyTime` as a possible site-batch or drift indicator. Codex
+supplied a single confounding scan reporting level count, largest level size and
+the min/max positive rate restricted to levels with at least 50 examinations,
+sorted by spread, with a caution about multiple comparisons. It also noted that
+`PatientName`, `PatientID`, `PatientBirthDate`, `AccessionNumber` and
+`ReferringPhysicianName` are retained, implying that the burned-in overlay
+probably contains identifiers — an independent reason to mask the border and a
+further reason to keep images away from external services. PII-adjacent fields
+are to be used only as anonymised groups and never reported as values.
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-24-152400.md, plus
+this entry. No dataset row, image, or identifier was accessed by the tool; no
+notebook cell was executed or edited; no marker prevalence, split, feature, or
+model result was established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-25 18:27 +04:00: stage orientation and the view confound
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompt: "read and tell me what does it mean. i'm not quite getting what we're
+currently doing rn. like which stage are we at we didn't even start eda?"
+
+Codex read the project status files, the 2026-09-24 Claude Code orientation report,
+and the notebook cell summaries with their scalar and table outputs (cells 18-23),
+without executing anything or reading any image output. It then interpreted the
+student's own confounding scan: among the candidate metadata fields only
+`SeriesDescription` and `ViewPosition` vary, splitting the sample into "view: PA"
+(717 of 1,000 sampled, 10.3% positive) and "view: AP" (283, 27.9% positive), a
+17.6-point spread, while size, `Modality`, `ConversionType`, `PatientOrientation`,
+`BodyPartExamined`, `PhotometricInterpretation`, `BitsStored`,
+`LossyImageCompression` and `StudyDate` are constant and `PatientSex` is nearly
+flat. Codex explained that the dataset is homogeneous apart from acquisition view,
+that view is also the only retained field whose value is written into the image as
+burned-in text, and that because AP or portable films are taken on sicker patients
+the association is clinically real and therefore a leakage route that patient-level
+grouping cannot remove. It recommended view-stratified evaluation — AUC overall and
+within each view — together with masking the border, rather than using view as a
+feature.
+
+Codex also flagged an inconsistency between the scan's overall positive rate
+(15.3%) and the saved examination-level train rate (22.28%), noting that a uniform
+1,000-draw from a 22.3% frame should contain about 223 positives rather than 153,
+and asked for `len(train_img)` and `train_img['Target'].mean()` from the same
+kernel session. Finally it supplied a stage map against the assignment sections:
+A and B essentially complete apart from explicit disjointness assertions and a
+fixed validation split, with C through G not started, and explained that the
+previous sessions were EDA in the data-understanding sense.
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-25-182700.md, plus
+this entry. No dataset row, image, or identifier was accessed by the tool; no
+notebook cell was executed or edited; no marker prevalence, split, feature, or
+model result was established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-26 15:17 +04:00: planning sections B and C
+
+AI tool: OpenAI Codex, planning assistance (the `$plan` workflow).
+User prompt: "let's plan out B and C part. create a task list i can adhere to and
+let's work together".
+
+Codex read the plan workflow instructions and the assignment PDF text, then read
+sections 3.B (10 marks) and 3.C (12 marks) alongside the section 2 dataset
+description. It produced a written work plan at
+`.omx/plans/plan-2026-09-26-sections-B-C.md` containing a requirements summary, the
+two decisions still requiring the student's choice (how to construct the validation
+split, and the canonical input resolution), ten task items with acceptance criteria
+— B0 to B5 covering the prevalence discrepancy check, the examination- and
+patient-level collapse, the three-way grouped split, disjointness assertions, split
+proportions, and the further-leakage-route write-up; and C1 to C5 covering the
+DICOM-to-tensor pipeline, the intensity-normalisation decision, training-only
+augmentation with an explicit rejection of horizontal flipping, the class-imbalance
+ablation using a weighted loss, and an optional border mask. It also recorded the
+recommended order of work, risks with mitigations, verification steps, and an
+out-of-scope list. This plan is guidance for the student's own implementation; no
+code was written or executed.
+
+Affected files: `.omx/plans/plan-2026-09-26-sections-B-C.md`, ../PROGRESS.md and
+../.omx/reports/task-2026-09-26-151700.md, plus this entry. No dataset row, image,
+or identifier was accessed by the tool; no notebook cell was executed or edited; no
+marker prevalence, split, feature, or model result was established. No web request
+or delegated agent was used.
+
+
+CONTINUATION — 2026-09-26 15:40 +04:00: section B cells B0-B2
+
+AI tool: OpenAI Codex, guided conceptual discussion.
+User prompt: "option a is good. and let's tart b0-b2".
+
+The student selected Option A from the B/C plan — keep the existing test set
+untouched and carve a patient-level stratified validation set from the training
+pool — and Codex supplied three notebook cells for section B. The first reconciles
+the earlier positive-rate discrepancy by printing the examination-weighted and
+patient-weighted positive rates together with mean examinations per patient by
+patient label, on the hypothesis that the 15.3% figure from the metadata scan is
+patient-weighted while the saved 22.28% is examination-weighted, which would require
+positive patients to hold roughly 1.6 times as many examinations. The second builds
+the examination-level table `exams` from the full merged table (asserting 25,684
+rows) and the patient-level table `patients` with examination count, positive count,
+patient label and a mixed-label patient count. The third reproduces the existing
+test set exactly with an equality assertion, carves validation from the training
+pool at the patient level using stratified sampling on the patient label, and maps
+the resulting patient-to-split assignment onto `exams`, asserting that every
+examination received a split. Codex also recommended caching header-derived view
+information for all examinations to `outputs/` for later sections. 
+
+Affected files: ../PROGRESS.md and ../.omx/reports/task-2026-09-26-154000.md, plus
+this entry. No dataset row, image, or identifier was accessed by the tool; no
+notebook cell was executed or edited; no marker prevalence, split, feature, or
+model result was established. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-24 18:06 +04:00 (recorded late on 2026-09-26): repository orientation
+
+AI tool: Claude Code (Anthropic), read-only orientation. This entry was omitted at
+the time and is reconstructed from ../.omx/reports/task-2026-09-24-180622.md.
+User prompt (per that report): "understand the repo".
+
+Claude Code read the project status files, the assignment PDF text, the notebook
+cell sources and the scalar text outputs of cells 3, 7-15 and 17. It skipped the
+table-head, box-coordinate, header-keyword and image outputs. It also ran a
+read-only environment check (Slurm variables, GPU visibility). It summarized the
+saved state against the rubric, corrected the recorded train/test positive-rate
+gap to about 1.3 points (22.28% vs 21.02%), and flagged that sections B, D and F
+require a fixed validation split, which the train/test-plus-CV design lacked.
+
+Affected files: ../PROJECT_DESCRIPTION.md, ../PROGRESS.md and
+../.omx/reports/task-2026-09-24-180622.md. No notebook cell was executed or edited,
+and no dataset row, image, or identifier was accessed. No web request or delegated
+agent was used.
+
+
+
+CONTINUATION — 2026-09-26 17:10 +04:00: rubric audit of the saved notebook
+
+AI tool: Claude Code (Anthropic), read-only review.
+User prompt: "adhering to the notebook. let's start going over the abcdefg phases.
+tell me what have i already finished and what i have not and missing. we are
+currently before b right."
+
+Claude Code compared the saved notebook with each bullet of sections A-G and
+listed each bullet as done, partial or missing, citing the notebook cells.
+Evidence came from cell sources and scalar outputs already read this session,
+plus the header lines of the two CSVs. It derived expected examination-level
+class counts from the saved outputs by arithmetic and marked them as unprinted.
+No code was written for the notebook.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no dataset row, image, or
+identifier was accessed. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-26 17:24 +04:00: re-check of section A
+
+AI tool: Claude Code (Anthropic), feedback on the student's own edits.
+User prompt: "chcek now."
+
+Claude Code re-read the notebook cell sources and scalar outputs after the student's
+edits. It gave feedback on the student's self-written section A markdown: it
+flagged the "has pneumonia" wording as an overclaim relative to the label
+definition, a count typo, missing examination-level proportions and source-patient
+total, the ambiguous reference to the difficult image, and the removal of the view
+check. No text or code was written for the notebook; the student writes all
+corrections.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image output was viewed; no
+dataset row or identifier was accessed. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-26 17:36 +04:00: re-check after notebook restructuring
+
+AI tool: Claude Code (Anthropic), feedback on the student's own edits.
+User prompt: "check it now."
+
+Claude Code re-read the restructured notebook's cell sources and text outputs and
+ran a local static check that parses the code cells to find variables used before
+they are defined. The notebook was not executed. Findings: three cells reference
+variables defined only in later cells, so the notebook would fail on
+Restart-and-Run-All; the panel is built twice from different tables; the printed
+split sizes and positive rates were deleted; and the view check was still absent. It
+also gave feedback on the student's self-written section A and B markdown. No text
+or code was written for the notebook.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image output was viewed; no
+dataset row or identifier was accessed. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-26 17:45 +04:00: A4 header-scan code and validation-split explanation
+
+AI tool: Claude Code (Anthropic).
+User prompt: "i think. and for b ok let's don't use stratified
+group fold then? does fixed seed with stratified group fold works? so i should idk what
+you mean. ok and hten b0."
+
+Claude Code tested the logic locally on up to 160 sampled examinations to check timing, cache reload and row order. Only value counts
+of those non-identifying tags were returned to the tool. For section B it explained
+that a fixed-seed StratifiedGroupKFold can produce a fixed validation set by taking
+its first fold. It gave one illustrative line and checked determinism on synthetic
+data only. It also advised that step B0 is no longer needed because the metadata
+scan it reconciled was deleted. 
+
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited by the tool. No image, pixel data,
+patient identifier, or dataset row was returned to the tool. No web request or
+delegated agent was used.
+
+
+
+CONTINUATION — 2026-09-26 18:30 +04:00: debugging the B3 IndexError
+
+AI tool: Claude Code (Anthropic), debugging a specific error after the student's
+attempt.
+User prompt: "check error".
+
+Claude Code read the saved traceback and cell sources. It explained two problems.
+First, the IndexError arose because the student's cell overwrote `train_img` with its
+training subset, so rerunning the cell indexed past the end of the smaller frame.
+Second, the three disjointness assertions all repeated the same train/validation
+check. It advised using a separate variable name, correcting the assertion pairs, and
+re-running the cells that rebuild `train_img`. No replacement cell was written; the
+student makes the edits.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image, identifier, or dataset row
+was accessed. No web request or delegated agent was used.
+
+
+
+
+CONTINUATION — 2026-09-26 18:55 +04:00: check after cell reordering
+
+AI tool: Claude Code (Anthropic), debugging after the student's attempt.
+User prompt: "check now".
+
+Claude Code re-read the notebook and ran a local static check, which parses the code
+cells to find variables used before they are defined; the notebook itself was not
+executed. It confirmed the student's reordering fixed the panel dependency. It then
+explained a new problem: the table of all examinations (`images`) is no longer
+defined, so the header-scan assertion fails and the split assertion and table cells
+would fail on a fresh run. It advised restoring that one definition and reverting the
+header scan to cover all examinations, plus the outstanding path fix. It noted that
+B5 had not yet been written. The student makes the edits.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image output was viewed; no
+identifier or dataset row was accessed. No web request or delegated agent was used.
+
+
+
+CONTINUATION — 2026-09-26 19:03 +04:00: debugging the B5 evidence cell
+
+AI tool: Claude Code (Anthropic), debugging a specific error after the student's
+attempt.
+User prompt: "check".
+
+Claude Code read the saved traceback and pointed out two typos in the student's copy
+of the B5 cell: a space inside the merge validation argument, which caused the
+ValueError, and a minus sign in place of a dot before `groupby`, which would fail
+next. It noted that the B5 paragraph is not yet written. The student makes the edits.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image, identifier, or dataset row
+was accessed. No web request or delegated agent was used.
+
+
+
+
+CONTINUATION — 2026-09-26 19:10 +04:00: B5 draft feedback and section C concepts
+
+AI tool: Claude Code (Anthropic), feedback on self-written prose and concept
+explanation.
+User prompt: "let's start c now. my simple plan of data augmentation is that we shoul
+boarder mask, and then maybe like rotate a little ibt? and then what we should do with
+class imbalance? can we do penalization on overfitting, what else can we do".
+
+Claude Code gave feedback on the student's self-written B5 draft, listing which
+required points were covered and which were missing, without rewriting it. For
+section C it explained these concepts:
+
+- that a border mask is deterministic preprocessing rather than augmentation, and how
+  it interacts with Bonus 2;
+- which augmentations are clinically safe and which to avoid, with reasons;
+- options for handling class imbalance (weighted loss via `pos_weight`, balanced
+  sampling, threshold moving) and their expected effects on metrics and calibration;
+- that regularization addresses overfitting rather than imbalance;
+- an outline of the DICOM-to-tensor pipeline, with a caching suggestion.
+
+No code or report text was written.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image, identifier, or dataset row
+was accessed. No web request or delegated agent was used.
+
+
+
+
+CONTINUATION — 2026-09-26 19:52 +04:00: walkthrough of the notebook so far
+
+AI tool: Claude Code (Anthropic), concept explanation.
+User prompt: "now explain what we have done here. in details."
+
+Claude Code read the notebook's cell list. It explained, in the conversation, the
+purpose of each cell in Parts A-C, the identifier model, the data flow, the design
+decisions and their reasons, which cells were AI-supplied, and likely oral-defence
+questions with the cells that answer them. No notebook or data file was changed.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No image, identifier, or dataset row was accessed. No web request or delegated
+agent was used.
+
+
+CONTINUATION — 2026-09-26 20:00 +04:00: section D design discussion
+
+AI tool: Claude Code (Anthropic), concept explanation and design advice.
+User prompt: "then let's start d, for trivial baseline always predict zero. for pytorch
+baseline let's use an mlp? because i'm lasy i don't want to do feature engineering. we
+can flatten everything to one vector and do that on a 3 layer mlp ig? and then do some
+hyper parameter tuning. this is baseline we don't need very good . we can do random
+serach on a small grid. mlp layers, mlp hiden states. learning rate. etc. al so do we
+have a working train val test now? shall we build it first."
+
+Claude Code discussed:
+
+- the trivial majority-class baseline and why accuracy misleads here;
+- the trade-offs of a raw-pixel MLP compared with image-summary features plus a
+  small searched MLP whose simplest setting is the rubric's logistic classifier;
+- a random-search design selected on validation ROC-AUC;
+- how the class-weight ablation for section C fits into D;
+- building a reusable training, prediction and metrics harness first.
+
+It also checked, read-only, that a GPU is visible to PyTorch. No code or report text
+was written.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image, identifier, or dataset row
+was accessed. No web request or delegated agent was used.
+
+
+
+
+CONTINUATION — 2026-09-27 14:05 +04:00: section E planning discussion
+
+AI tool: Claude Code (Anthropic), concept explanation and design advice.
+User prompt: "next let's plan e. can we use a version of image net with resnet and a
+smaller variation of image net? and we do two pass right. and let's try it? let's
+discuss first"
+
+Claude Code explained the section E requirements and proposed a plan:
+
+- an ImageNet-pretrained ResNet-18, with ResNet-50 as an optional larger model;
+- handling the one-channel input by summing the first-layer RGB filters;
+- replacing the classification head with a single logit;
+- the two training stages (frozen feature extractor, then fine-tuning the final block),
+  including the BatchNorm caveat;
+- keeping the comparison with the baseline controlled;
+- seed control, with three seeds for both the CNN and the baseline.
+
+It checked, read-only, that the pretrained weights can be downloaded. No code or
+report text was written.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image, identifier, or dataset row
+was accessed. No web request other than a header check on the public PyTorch weights
+URL; no delegated agent was used.
+
+
+
+CONTINUATION — 2026-09-27 14:40 +04:00: check of the section E run
+
+AI tool: Claude Code (Anthropic), read-only check.
+User prompt: "check my implementation and are we running on gpu?"
+
+Claude Code confirmed from the GPU monitor that the student's notebook process is
+running on the GPU. It confirmed that the section E cells match the code it inserted,
+apart from whitespace. It read the partial outputs saved so far: the seed-42 loss
+table and stage comparison, and seed 43's completion time. It summarised them in the
+conversation. No notebook or data file was changed.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No image, identifier, or dataset row was accessed. No web request or delegated
+agent was used.
+
+
+CONTINUATION — 2026-09-27 14:45 +04:00: discussion of ways to improve the CNN
+
+AI tool: Claude Code (Anthropic), concept explanation and advice.
+User prompt: "can we make the accuracy even higher or such?"
+
+Claude Code explained why accuracy is not the right target at this class balance. It
+listed options to improve discrimination:
+
+- a gentler fine-tuning schedule;
+- unfreezing more layers;
+- higher input resolution;
+- a larger backbone;
+- seed ensembling.
+
+It noted three risks: selecting on test results after they have been printed; using
+chest-X-ray-pretrained weights that may include these same NIH images; and higher
+scores reflecting the acquisition-view shortcut. No code or report text was written.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image, identifier, or dataset row
+was accessed. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-27 14:50 +04:00: explanation of section E results
+
+AI tool: Claude Code (Anthropic), explanation of the student's results.
+User prompt (verbatim): "check again we all finished. and let's don't care about it
+then. check and let's discuss then explain to me again everything in detail"
+
+Claude Code read the student's completed section E outputs: the loss table, the stage
+comparison, the three-seed ROC-AUC table and summary, and the saved files. It
+explained them in the conversation: underfitting in the frozen stage, overfitting
+after two fine-tuning epochs, improvement from baseline to frozen to fine-tuned, and
+a CNN-versus-baseline gap many times the seed standard deviation, with an approximate
+test-sampling caveat. The student decided not to tune the ResNet further. No notebook
+or data file was changed, and the E interpretation cell was left for the student's
+decision.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No image, identifier, or dataset row was accessed. No web request or delegated
+agent was used.
+
+
+CONTINUATION — 2026-09-27 14:55 +04:00: accuracy versus the trivial baseline
+
+AI tool: Claude Code (Anthropic), explanation and a small read-only computation.
+User prompts (verbatim): "shall we do weighted loss with resnet 18 as well? or we
+don't need to. and i think we can get the accuracy better like we should be improving
+compared to the dumb baseline" and "let's discuss how can we do it"
+
+Claude Code confirmed that the ResNet already uses the weighted loss. It explained
+why the CNN's accuracy at threshold 0.5 equals the trivial baseline's: the weighting
+inflates predicted probabilities, and the accuracy-optimal threshold is about
+w/(1+w) ≈ 0.78. To illustrate, it computed accuracy across thresholds from the saved
+validation predictions only; the test predictions were not used. Figures computed by
+the tool: the CNN's best validation accuracy is 0.839 at threshold 0.83 (sensitivity
+0.46, specificity 0.94), against 0.784 for the trivial baseline; the MLP's best is
+0.806. It advised handling this through validation-chosen thresholds in section F,
+not by retraining. No notebook or data file was changed.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No image, identifier, or dataset row was accessed. No web request or delegated
+agent was used.
+
+
+CONTINUATION — 2026-09-27 15:00 +04:00: section F planning discussion
+
+AI tool: Claude Code (Anthropic), concept explanation and design advice.
+User prompt (verbatim): "let's plan F then and start doing it together. discuss first"
+
+Claude Code explained the section F requirements and proposed a plan:
+
+- evaluating the saved predictions;
+- choosing screening (sensitivity ≥ 0.90) and high-specificity (specificity ≥ 0.95)
+  thresholds on the validation split only, freezing them, and applying them to test;
+- one comparison table and confusion matrices;
+- ROC and precision-recall curves, and why precision-recall is more informative at
+  this class balance;
+- a reliability diagram with the Brier score, the difference between discrimination
+  and calibration, and an optional prior correction for the class-weighted
+  probabilities.
+
+No code or report text was written.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image, identifier, or dataset row
+was accessed. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-27 15:05 +04:00: discussion of optional section E self-tests
+
+AI tool: Claude Code (Anthropic), concept explanation and design advice.
+User prompt (verbatim): "before that, shall we try a variation of imagenet, since
+we're gray scale, maybe we can try 1. using three channels not shrinking to one
+channel, but actualy representing the colors as three channels rgb colors. 2. an
+resnet pretrained on imagenet but is specifically for grayscale? add it under E. add
+like E: (self-test 1) and self-test 2. let's discuss first"
+
+Claude Code explained that copying the grey image into three channels is
+mathematically equivalent to the summed one-channel first layer already used. It
+suggested a meaningful three-channel alternative (different contrast views of the
+image in each channel). It explained that no official grayscale ImageNet ResNet is
+available, and that chest-X-ray-pretrained weights risk overlapping with this NIH
+dataset. It suggested training from scratch as an informative alternative, and
+proposed evaluating any self-test on the validation split only. It checked read-only
+which libraries are installed. No code or report text was written.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image, identifier, or dataset row
+was accessed. No web request or delegated agent was used.
+
+
+
+CONTINUATION — 2026-09-27 15:50 +04:00: clarifying self-test 1 (grey as RGB)
+
+AI tool: Claude Code (Anthropic), concept explanation.
+User messages (verbatim): "no for the rgb channel i meant like representing gray
+scale values as rgb." / "no like can we represent black as rgb like we can? so we
+represent those colors as actual rgb proportions" / "this one" / "let's discuss"
+
+Claude Code asked a clarifying question with three options. It then explained that
+a grey pixel in RGB has equal red, green and blue values. Representing the X-ray as
+an actual RGB image therefore means copying the grey value into all three channels
+and using the unmodified pretrained network with ImageNet normalisation, which is
+mathematically equivalent to the one-channel adaptation already used. It proposed
+replacing the earlier multi-view self-test with this version. No notebook or data
+file was changed.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No image, identifier, or dataset row was accessed. No web request or delegated
+agent was used.
+
+
+CONTINUATION — 2026-09-27 15:55 +04:00: self-test 1 kept as implemented
+
+AI tool: Claude Code (Anthropic), brief confirmation.
+User prompt (verbatim): "nvm i think the current one is good. let's see. because
+mathematically g=g=b is not goonna be too different than the grey image becasue we
+summed filters as wel"
+
+The student decided to keep the multi-view self-test 1. Claude Code confirmed the
+student's reasoning, which is correct: copying grey into R, G and B is equivalent to
+the summed one-channel filter. No file other than the logs below was changed.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No web request or delegated agent was used.
+
+
+CONTINUATION — 2026-09-27 17:00 +04:00: E6 self-test interpretation explanation 
+
+AI tool: Claude Code (Anthropic), explantion. 
+User prompt (verbatim): "it's done. i see so like there's not much difference.
+explain everything as well, let's analyze."
+
+The student ran the E6 self-tests. Claude Code read the outputs:
+
+- the channel statistics;
+- the validation ROC-AUC of 0.8622 for the three-view RGB model and 0.8631 for the
+  model trained from scratch, against the headline three-seed mean of
+  0.8649 ± 0.0023;
+- the comparison table;
+- the loss-curve plot, which is a line chart, not a medical image.
+
+It explained them in the conversation, including that its own earlier prediction (the
+from-scratch model would score clearly lower) was wrong. 
+
+Affected files: 25011162_ENG2440_A1.ipynb (the E6 interpretation cell),
+../PROGRESS.md and one report under ../.omx/reports/, plus this entry. No image,
+identifier, or dataset row was returned to the tool. No web request or delegated agent
+was used.
+
+
+CONTINUATION — 2026-09-27 17:05 +04:00: section F concepts (thresholds, reference rows, calibration)
+
+AI tool: Claude Code (Anthropic), explanation and a small read-only computation.
+User prompt (verbatim): "should we test out difference thresholds first? and what is
+the 0.5 refernce rows and the calibration correction. let's discuss first. be simple
+be specific"
+
+Claude Code explained three things:
+
+- threshold sweeping on the validation split and how the two threshold rules pick from
+  it;
+- what the default 0.5 reference rows are;
+- what the optional calibration correction for the class-weighted loss does.
+
+To illustrate, it computed a threshold sweep (thresholds 0.2-0.9) and the mean
+corrected probability from the headline CNN's saved validation predictions only; the
+test predictions were not used. No notebook or data file was changed.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No image, identifier, or dataset row was accessed. No web request or delegated
+agent was used.
+
+
+
+CONTINUATION — 2026-09-27 17:25 +04:00: section F explanation 
+
+AI tool: Claude Code (Anthropic).
+User prompt (verbatim): "let's discuss, expain everything to me."
+
+The student ran the section F cells. Claude Code read the outputs:
+
+- the validation threshold sweep and the frozen thresholds;
+- the test comparison table;
+- the calibration table;
+- the ROC, precision-recall and reliability plots, which are charts, not medical
+  images.
+
+It explained them in the conversation
+
+- the threshold transfer from validation to test;
+- the models compared at matched sensitivity and matched specificity;
+- why the precision-recall gap is larger than the ROC gap;
+- over-prediction caused by the class weight, and the effect of the prior correction
+  on the Brier score;
+- discrimination versus calibration.
+
+Affected files: 25011162_ENG2440_A1.ipynb (the F interpretation cell),
+../PROGRESS.md and one report under ../.omx/reports/, plus this entry. No image,
+identifier, or dataset row was returned to the tool. No web request or delegated
+agent was used.
+
+
+CONTINUATION — 2026-09-27 17:30 +04:00: section G planning discussion
+
+AI tool: Claude Code (Anthropic), concept explanation and design advice.
+User prompt (verbatim): "let's plan G phase first"
+
+Claude Code proposed a plan for section G:
+
+- true/false positive and negative examples at the frozen screening threshold;
+- AP versus PA subgroup performance with bootstrap confidence intervals, as a test of
+  the acquisition-view shortcut;
+- Grad-CAM on the last residual block, with its justification;
+- quantitative attention checks: the share of attention in the border ring, and a
+  pointing game against the annotated boxes;
+- a note that Grad-CAM does not prove causation.
+
+It stated that it will not view the radiographs or Grad-CAM overlays, in line with
+the assignment's data rule; the student will describe the visuals. No code or report
+text was written.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image, identifier, or dataset row
+was accessed. No web request or delegated agent was used.
+
+
+
+CONTINUATION — 2026-09-27 17:50 +04:00: check of the notebook during re-run
+
+AI tool: Claude Code (Anthropic), read-only check.
+User prompts (verbatim): "explain everything to me in details and check" and "check
+my implementations"
+
+Claude Code confirmed that the section G code in the notebook matches what it
+inserted and that it has not yet been executed. It also found that the student is
+re-running the whole notebook from a restarted kernel. No file other than the logs
+was changed.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No image, identifier, or dataset row was accessed. No web request or delegated
+agent was used.
+
+
+CONTINUATION — 2026-09-27 18:15 +04:00: section G explanation
+
+AI tool: Claude Code (Anthropic), explanation.
+User prompt (verbatim): "explain it yes."
+
+Claude Code waited for the student's full re-run of the notebook. It confirmed that
+the run completed in order without errors and that earlier results reproduced
+exactly. It then read the text outputs of section G:
+
+- the prediction-group counts;
+- the AP/PA subgroup table with bootstrap confidence intervals and the view-only AUC;
+- the Grad-CAM border-share and pointing-game tables.
+
+In line with the data rule, it did not view the radiograph or Grad-CAM panels. It
+explained the results in the conversation:
+
+- smaller opacities among missed cases;
+- lower within-view AUCs, showing that the view contributes part of the pooled
+  performance;
+- uneven threshold behaviour across AP and PA films;
+- the attention patterns and pointing game;
+- the causation caveat.
+
+
+Affected files: 25011162_ENG2440_A1.ipynb (the G interpretation cell),
+../PROGRESS.md and one report under ../.omx/reports/, plus this entry. No image,
+identifier, or dataset row was returned to the tool. No web request or delegated agent
+was used.
+
+
+CONTINUATION — 2026-09-27 18:20 +04:00: bonus questions planning discussion
+
+AI tool: Claude Code (Anthropic), concept explanation and design advice.
+User prompt (verbatim): "let's plan the 2 bonus now."
+
+Claude Code proposed plans for both optional bonus questions.
+
+- Bonus 1: build 10% and 40% prevalence test sets by subsampling one class only.
+  Apply the frozen screening threshold. Report sensitivity, specificity, PPV, F1 and
+  ROC-AUC, with an optional repeated-draw analysis. Explain which metrics depend on
+  prevalence and why.
+- Bonus 2: mask the outer 8% border, and as a control an equal-area pair of regions
+  inside the lung fields. Report the distributions of the change in predicted
+  probability, with breakdowns and a paired test. Show Grad-CAM before and after for
+  the three largest changes. Explain what the control can and cannot show.
+
+No code or report text was written.
+
+Affected files: ../PROGRESS.md and one report under ../.omx/reports/, plus this
+entry. No notebook cell was executed or edited; no image, identifier, or dataset row
+was accessed. No web request or delegated agent was used.
+
+
+
+CONTINUATION — 2026-09-27 18:45 +04:00: bonus explanation
+
+AI tool: Claude Code (Anthropic), results interpretation written on explicit request.
+User prompt (verbatim): "check my work now. explain"
+
+The student ran both bonus sections. Claude Code read the text outputs:
+
+- the prevalence-shift table and the 200-draw summary;
+- the change-in-probability table, masked ROC-AUCs and the Wilcoxon result.
+
+Affected files: 25011162_ENG2440_A1.ipynb (the two bonus interpretation cells),
+../PROGRESS.md and one report under ../.omx/reports/, plus this entry. No image,
+identifier, or dataset row was returned to the tool. No web request or delegated
+agent was used.
+
+
+CONTINUATION — 2026-09-27 18:50 +04:00: GitHub repository set up by the AI tool
+
+AI tool: Claude Code (Anthropic), repository setup on explicit request.
+User prompt (verbatim): "yes set up the github repo". In answer to Claude Code's
+questions, the student chose the repository name 25011162_ENG2440_A1, stripping X-ray
+images from the uploaded notebook, and uploading submission files only.
+
+Claude Code:
+
+- wrote ../export_github_repo.py, which builds a clean copy in ../github_repo/. It
+  copies the notebook and this declaration, and in the notebook copy replaces the
+  image outputs of the nine cells that display chest X-rays with a short note, keeping
+  all tables, numbers and charts. The working notebook is not modified.
+- wrote the repository README (run instructions), requirements.txt (package versions)
+  and .gitignore, which excludes the dataset, CSV files and derived outputs;
+- initialised Git, made the first commit, and created and pushed the private GitHub
+  repository 25011162_ENG2440_A1 under the student's authenticated account.
+
+No dataset file, CSV, DICOM image, cached array or model weight was uploaded.
+
+Affected files: ../export_github_repo.py, ../github_repo/ (README.md,
+requirements.txt, .gitignore, the notebook copy, this declaration), ../PROGRESS.md and
+one report under ../.omx/reports/, plus this entry.
+
+
+
+CONTINUATION — 2026-09-27 19:15 +04:00: report scaffold (no report text written)
+
+AI tool: Claude Code (Anthropic), report planning and LaTeX scaffolding.
+User prompt (verbatim): "now let's plan out the report shall we. plan it out and creat
+one ig in tex"
+
+Claude Code planned the report's page budget and structure. It created a local folder
+../report/ containing:
+
+- make_assets.py: exports the notebook's figures and results tables, including a
+  compact rearrangement of the representative-image panel;
+- report.tex: a LaTeX skeleton with one section per rubric part, the figures and
+  tables inserted, and highlighted TODO boxes listing what each rubric item requires
+  and which of the student's notebook text to adapt;
+- the three references, copied verbatim from the assignment PDF;
+- README.md: build instructions.
+
+Claude Code did not write any report text. All prose is left for the student. Figure
+captions are short neutral descriptions, and table contents are the student's own
+notebook outputs. The folder contains X-ray figures, is not part of the GitHub
+repository, and is intended for the Moodle submission.
+
+Affected files: ../report/ (new), ../PROGRESS.md and one report under ../.omx/reports/,
+plus this entry. No web request or delegated agent was used.
+
+
+
+CONTINUATION — 2026-09-27 19:55 +04:00: GitHub repository refreshed as a single clean commit
+
+AI tool: Claude Code (Anthropic), repository maintenance on explicit request.
+User prompt (verbatim): "refresh the repo. delete evrything there now. revert the lsat
+commit and recommit. i want one clean commit i changd some contents. also for gradcam
+exray al of these not in the public repo. shouldn't be"
+
+The student had rewritten the Bonus 1 and Bonus 2 markdown in the notebook in their
+own words. Claude Code:
+
+- re-ran ../export_github_repo.py. X-ray outputs are still removed, including every
+  Grad-CAM overlay; only the non-medical charts remain.
+- replaced the repository's single previous commit with one new commit, using
+  git commit --amend and a force push, so the public history contains only the
+  refreshed files.
+
+The previous commit also contained no X-ray images, because X-ray outputs have been
+stripped since the first push. Claude Code notes that the assignment PDF asks for a
+private repository; at the student's choice, the repository remains public.
+
+Affected files: ../github_repo/ (the notebook copy and this declaration), the remote
+repository ray-suton/25011162_ENG2440_A1, ../PROGRESS.md and one report under
+../.omx/reports/, plus this entry.

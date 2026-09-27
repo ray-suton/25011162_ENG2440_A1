@@ -1,0 +1,16 @@
+# Dataset and derived data: never commit (assignment section 5)
+*.csv
+*.dcm
+*.zip
+ENG2440_Assignment1/data/
+outputs/*
+!outputs/.gitkeep
+*.npy
+*.pt
+*.pth
+
+# Environments, caches and editor state
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
